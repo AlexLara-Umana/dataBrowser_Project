@@ -21,7 +21,7 @@ insert.addEventListener('click', function(event) {
 });
 
 async function queryDB(formData) {
-  fetch('query.php', {
+  fetch('Query.php', {
     method: 'POST',
     body: formData
   })
@@ -38,7 +38,7 @@ async function queryDB(formData) {
 }
 
 async function insertDB(formData) {
-  fetch('insert.php', {
+  fetch('Insert.php', {
     method: 'POST',
     body: formData
   })
@@ -98,20 +98,20 @@ function collectionScroll(direction) {
   } else if (index >= collection.length) {
     index %= collection.length;
   }
-  setPokemonAttributes(collection[index]);
+  setChampionAttributes(collection[index]);
 }
 
 function jumpToScrollStart() {
   index = 0;
-  setPokemonAttributes(collection[index]);
+  setChampionAttributes(collection[index]);
 }
 
 function jumpToScrollEnd() {
   index = collection.length - 1;
-  setPokemonAttributes(collection[index]);
+  setChampionAttributes(collection[index]);
 }
 
-function resetPokemonAttributes() {
+function resetChampionAttributes() {
   numhtml.innerHTML = "???";
   namehtml.innerHTML = "???";
   type1html.innerHTML = "???";
@@ -133,9 +133,9 @@ function resetPokemonAttributes() {
   imghtml.src = "./data/images/placeholder.png";
 }
 
-function setPokemonAttributes(pokemon) {
+function setChampionAttributes(pokemon) {
   if (collection.length < 1) {
-    resetPokemonAttributes();
+    resetChampionAttributes();
     return;
   }
 
@@ -143,23 +143,23 @@ function setPokemonAttributes(pokemon) {
     return parseInt(100 * (parseInt(htmlelem.innerText) / 255));
   }
 
-  numhtml.innerHTML = pokemon.num;
-  namehtml.innerHTML = pokemon.name;
-  type1html.innerHTML = pokemon.type1;
-  type2html.innerHTML = pokemon.type2;
-  hphtml.innerHTML = pokemon.hp;
+  numhtml.innerHTML = Champion.num;
+  namehtml.innerHTML = Champion.name;
+  type1html.innerHTML = Champion.type1;
+  type2html.innerHTML = Champion.type2;
+  hphtml.innerHTML = Champion.hp;
   hphtml.style.width = calcBarWidth(hphtml) + "px";
-  attackhtml.innerHTML = pokemon.attack;
+  attackhtml.innerHTML = Champion.attack;
   attackhtml.style.width = calcBarWidth(attackhtml) + "px";
-  defensehtml.innerHTML = pokemon.defense;
+  defensehtml.innerHTML = Champion.defense;
   defensehtml.style.width = calcBarWidth(defensehtml) + "px";
-  spatkhtml.innerHTML = pokemon.spatk;
+  spatkhtml.innerHTML = Champion.spatk;
   spatkhtml.style.width = calcBarWidth(spatkhtml) + "px";
-  spdefhtml.innerHTML = pokemon.spdef;
+  spdefhtml.innerHTML = Champion.spdef;
   spdefhtml.style.width = calcBarWidth(spdefhtml) + "px";
-  speedhtml.innerHTML = pokemon.speed;
+  speedhtml.innerHTML = Champion.speed;
   speedhtml.style.width = calcBarWidth(speedhtml) + "px";
-  generationhtml.innerHTML = pokemon.generation;
-  legendaryhtml.innerHTML = pokemon.legendary;
-  imghtml.src = "./data/images/" + pokemon.num + ".png";
+  generationhtml.innerHTML = Champion.generation;
+  legendaryhtml.innerHTML = Champion.legendary;
+  imghtml.src = "./Data/Images/" + Champion.num + ".png";
 }
