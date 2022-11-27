@@ -1,26 +1,14 @@
 
 <?php
-class PokemonForm {
+class ChampionForm {
     function __construct() {
         $this->attributes = [
             "number" => "",
             "name" => "",
-            "type1" => "",
-            "type2" => "",
-            "hpmax" => "",
-            "hpmin" => "",
-            "attackmax" => "",
-            "attackmin" => "",
-            "defensemax" => "",
-            "defensemin" => "",
-            "spattmax" => "",
-            "spatkmin" => "",
-            "spdefmax" => "",
-            "spdefmin" => "",
-            "speedmax" => "",
-            "speedmin" => "",
-            "generation" => "",
-            "legendary" => ""
+            "origin" => "",
+            "class" => "",
+            "alias" => "",
+            "role" => ""
         ];
     }
 
