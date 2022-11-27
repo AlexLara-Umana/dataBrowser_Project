@@ -1,7 +1,7 @@
 <?php
-include('./PokemonForm.php');
+include('./ChampionForm.php');
 
-class PokemonDB {
+class ChampionDB {
     function __construct($collection) {
         $this->collection = $collection;
     }
@@ -11,109 +11,70 @@ class PokemonDB {
             return $this;
         }
         $newColl = [];
-        foreach ($this->collection as $pokemon) {
-            if ($pokemon->num == $num) {
-                array_push($newColl, $pokemon);
+        foreach ($this->collection as $Champion) {
+            if ($Champion->num == $num) {
+                array_push($newColl, $Champion);
             }
         }
-        return new PokemonDB($newColl);
+        return new ChampionDB($newColl);
     }
 
-    function findName($name) {
+    function findOrigin($name) {
         $newColl = [];
-        foreach ($this->collection as $pokemon) {
-            if (str_contains(strtolower($pokemon->name), strtolower($name))) {
-                array_push($newColl, $pokemon);
+        foreach ($this->collection as $Champion) {
+            if (str_contains(strtolower($Champion->name), strtolower($name))) {
+                array_push($newColl, $Champion);
             }
         }
-        return new PokemonDB($newColl);
+        return new ChampionDB($newColl);
     }
 
-    function findType($type) {
-        if ($type == null) {
-            return $this;
-        }
+    function findClass($class) {
         $newColl = [];
-        foreach ($this->collection as $pokemon) {
-            if (strtolower($pokemon->type1) == strtolower($type)) {
-                array_push($newColl, $pokemon);
-            } elseif (strtolower($pokemon->type2) == strtolower($type)) {
-                array_push($newColl, $pokemon);
+        foreach ($this->collection as $Champion) {
+            if (str_contains(strtolower($Champion->class), strtolower($class))) {
+                array_push($newColl, $Champion);
             }
         }
-        return new PokemonDB($newColl);
+        return new ChampionDB($newColl);
     }
 
-    function findStat($stat, $min, $max) {
-        if ($stat == null) {
-            return $this;
-        }
-        if ($min == null) {
-            $min = 0;
-        }
-        if ($max == null) {
-            $max = INF;
-        }
+    function findAlias($alias) {
         $newColl = [];
-        foreach ($this->collection as $pokemon) {
-            $statnum = $pokemon->$stat;
-            if ($statnum >= $min && $statnum <= $max) {
-                array_push($newColl, $pokemon);
+        foreach ($this->collection as $Champion) {
+            if (str_contains(strtolower($Champion->alias), strtolower($alias))) {
+                array_push($newColl, $Champion);
             }
         }
-        return new PokemonDB($newColl);
+        return new ChampionDB($newColl);
     }
 
-    function findGeneration($generation) {
-        if ($generation == null) {
-            return $this;
-        }
+    function findRole($role) {
         $newColl = [];
-        foreach ($this->collection as $pokemon) {
-            if($pokemon->generation == $generation) {
-                array_push($newColl, $pokemon);
+        foreach ($this->collection as $Champion) {
+            if (str_contains(strtolower($Champion->role), strtolower($role))) {
+                array_push($newColl, $Champion);
             }
         }
-        return new PokemonDB($newColl);
+        return new ChampionDB($newColl);
     }
-
-    function findLegendary($legendary) {
-        if ($legendary == null) {
-            return $this;
-        }
-        $newColl = [];
-        foreach ($this->collection as $pokemon) {
-            if (strtolower($pokemon->legendary) == strtolower($legendary)) {
-                array_push($newColl, $pokemon);
-            }
-        }
-        return new PokemonDB($newColl);
-    }
-}
 
 function handleUserQuery() {
 
-    // get data from json db and store in pokemon db class to allow easy searching
-    $json_str = file_get_contents("./data/pokemondb.json");
+    // get data from json db and store in champion db class to allow easy searching
+    $json_str = file_get_contents("./Data/ChampionB.json");
     $objlist = json_decode($json_str);
-    $db = new PokemonDB($objlist);
+    $db = new ChampionDB($objlist);
 
-    $request = new PokemonForm();
+    $request = new ChampionForm();
     $request->populateFromPostData();
 
     $queryResult = $db->findNumber($request->attributes["number"])
                         ->findName($request->attributes["name"])
-                        ->findType($request->attributes["type1"])
-                        ->findType($request->attributes["type2"])
-                        ->findStat("hp", $request->attributes["hpmin"], $request->attributes["hpmax"])
-                        ->findStat("attack", $request->attributes["attackmin"], $request->attributes["attackmax"])
-                        ->findStat("defense", $request->attributes["defensemin"], $request->attributes["defensemax"])
-                        ->findStat("spatk", $request->attributes["spatkmin"], $request->attributes["spattmax"])
-                        ->findStat("spdef", $request->attributes["spdefmin"], $request->attributes["spdefmax"])
-                        ->findStat("speed", $request->attributes["speedmin"], $request->attributes["speedmax"])
-                        ->findGeneration($request->attributes["generation"])
-                        ->findLegendary($request->attributes["legendary"]);
-
+                        ->findOrigin($request->attributes["origin"])
+                        ->findClass($request->attributes["class"])
+                        ->findAlias($request->attributes["alias"])
+                        ->findRole($request->attributes["role"]);
     echo json_encode($queryResult);
 }
 
