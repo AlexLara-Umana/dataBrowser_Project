@@ -19,10 +19,20 @@ class ChampionDB {
         return new ChampionDB($newColl);
     }
 
-    function findOrigin($name) {
+    function findName($name) {
         $newColl = [];
         foreach ($this->collection as $Champion) {
             if (str_contains(strtolower($Champion->name), strtolower($name))) {
+                array_push($newColl, $Champion);
+            }
+        }
+        return new ChampionDB($newColl);
+    }
+
+    function findOrigin($origin) {
+        $newColl = [];
+        foreach ($this->collection as $Champion) {
+            if (str_contains(strtolower($Champion->origin), strtolower($origin))) {
                 array_push($newColl, $Champion);
             }
         }
