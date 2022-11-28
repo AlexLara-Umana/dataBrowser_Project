@@ -13,7 +13,7 @@ body > * {
 body > header {
   font-weight: 900;
   font-size: xx-large;
-  background: -webkit-linear-gradient(#eee, #333, #eee);
+  background: -webkit-linear-gradient(white, black, white);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

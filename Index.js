@@ -69,17 +69,11 @@ function handleInsertResponse(response) {
 // stat html elements
 const numhtml = document.getElementById("disp-number");
 const namehtml = document.getElementById("disp-name");
-const type1html = document.getElementById("disp-type1");
-const type2html = document.getElementById("disp-type2");
-const hphtml = document.getElementById("disp-hp");
-const attackhtml = document.getElementById("disp-attack");
-const defensehtml = document.getElementById("disp-defense");
-const spatkhtml = document.getElementById("disp-spatk");
-const spdefhtml = document.getElementById("disp-spdef");
-const speedhtml = document.getElementById("disp-speed");
-const generationhtml = document.getElementById("disp-generation");
-const legendaryhtml = document.getElementById("disp-legendary");
-const imghtml = document.getElementById("disp-pokemon-img");
+const originhtml = document.getElementById("disp-origin");
+const classhtml = document.getElementById("disp-class");
+const aliashtml = document.getElementById("disp-alias");
+const rolehtml = document.getElementById("disp-role");
+const imghtml = document.getElementById("disp-champion-img");
 
 // event listeners for scroll buttons
 const scroll_start = document.getElementById("scroll-start");
@@ -114,23 +108,11 @@ function jumpToScrollEnd() {
 function resetChampionAttributes() {
   numhtml.innerHTML = "???";
   namehtml.innerHTML = "???";
-  type1html.innerHTML = "???";
-  type2html.innerHTML = "???";
-  hphtml.innerHTML = "???";
-  hphtml.style.width = "100px"
-  attackhtml.innerHTML = "???";
-  attackhtml.style.width = "100px"
-  defensehtml.innerHTML = "???";
-  defensehtml.style.width = "100px"
-  spatkhtml.innerHTML = "???";
-  spatkhtml.style.width = "100px"
-  spdefhtml.innerHTML = "???";
-  spdefhtml.style.width = "100px"
-  speedhtml.innerHTML = "???";
-  speedhtml.style.width = "100px"
-  generationhtml.innerHTML = "???";
-  legendaryhtml.innerHTML = "???";
-  imghtml.src = "./data/images/placeholder.png";
+  originhtml.innerHTML = "???";
+  classhtml.innerHTML = "???";
+  aliashtml.innerHTML = "???";
+  rolehtml.style.width = "???";
+  imghtml.src = "./Data/Images/Placeholder.png";
 }
 
 function setChampionAttributes(pokemon) {
@@ -145,21 +127,9 @@ function setChampionAttributes(pokemon) {
 
   numhtml.innerHTML = Champion.num;
   namehtml.innerHTML = Champion.name;
-  type1html.innerHTML = Champion.type1;
-  type2html.innerHTML = Champion.type2;
-  hphtml.innerHTML = Champion.hp;
-  hphtml.style.width = calcBarWidth(hphtml) + "px";
-  attackhtml.innerHTML = Champion.attack;
-  attackhtml.style.width = calcBarWidth(attackhtml) + "px";
-  defensehtml.innerHTML = Champion.defense;
-  defensehtml.style.width = calcBarWidth(defensehtml) + "px";
-  spatkhtml.innerHTML = Champion.spatk;
-  spatkhtml.style.width = calcBarWidth(spatkhtml) + "px";
-  spdefhtml.innerHTML = Champion.spdef;
-  spdefhtml.style.width = calcBarWidth(spdefhtml) + "px";
-  speedhtml.innerHTML = Champion.speed;
-  speedhtml.style.width = calcBarWidth(speedhtml) + "px";
-  generationhtml.innerHTML = Champion.generation;
-  legendaryhtml.innerHTML = Champion.legendary;
+  originhtml.innerHTML = Champion.origin;
+  classhtml.innerHTML = Champion.class;
+  aliashtml.innerHTML = Champion.alias;
+  rolehtml.innerHTML = Champion.role;
   imghtml.src = "./Data/Images/" + Champion.num + ".png";
 }
