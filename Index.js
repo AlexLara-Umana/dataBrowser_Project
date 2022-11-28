@@ -58,7 +58,7 @@ async function insertDB(formData) {
 function handleQueryResponse(response) {
   response = response["collection"];
   collection = response;
-  setPokemonAttributes(collection[0]);
+  setChampionAttributes(collection[0]);
   index = 0;
 }
 
@@ -66,7 +66,7 @@ function handleInsertResponse(response) {
 
 }
 
-// stat html elements
+// variables html elements
 const numhtml = document.getElementById("disp-number");
 const namehtml = document.getElementById("disp-name");
 const originhtml = document.getElementById("disp-origin");
@@ -115,7 +115,7 @@ function resetChampionAttributes() {
   imghtml.src = "./Data/Images/Placeholder.png";
 }
 
-function setChampionAttributes(pokemon) {
+function setChampionAttributes(Champion) {
   if (collection.length < 1) {
     resetChampionAttributes();
     return;
