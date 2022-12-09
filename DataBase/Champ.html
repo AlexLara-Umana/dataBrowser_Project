@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./Assets/MainPage.css" />
+    <title>LOL Database</title>
+  </head>
+  <body class="wrapper">
+    <header>
+      <div class="logo">
+        <div><img src="./Assets/PNGwing.com.png" style="Padding:15px;"/></div>
+        <div class="text_blue"><h1><strong>Champion<br>Archive</strong></h1></div>
+      </div>
+    </header>
+    <table>
+      <tr>
+        <td>
+          <hr />
+          <button id="edit" class="float-right" onclick="toggle_edit()">
+            Toggle Edit <img src="Assets/Edit.svg" width="15px" />
+          </button>
+          <form id="champ_form" method="POST" enctype="multipart/form-data">
+            <fieldset>
+              <input id="delete" type="submit" value="Remove" class="float-right" formaction="DeleteChamp.php"/>
+              <input id="update" type="submit" value="Update" class="float-right" formaction="UpdateChamp.php"/>
+              <input id="add" type="submit" value="Insert" class="float-right" formaction="AddChamp.php"/>
+              <input type="submit" value="Initiate" class="float-right" formaction="InitChampDB.php"/>
+              <input type="reset" value="Reset" class="float-right"/>
+
+              <label for="nickname">Name of Champion:</label>
+              <input type="text" id="title" name="title" /><br />
+
+              <label for="nickname">Champ_Id:</label>
+              <input type="number" name="movie_id" id="movie_id" /><br />
+
+              <label for="year">Year of Debut:</label>
+              <input type="number" id="year" name="year" /><br />
+
+              <label for="origin">Place of Origin:</label>
+              <input type="text" id="length" name="length" /><br />
+
+              <label for="alias">Alias, or Title:</label>
+              <input type="text" id="rating" name="rating" /><br />
+
+              <label for="meta">Meta?</label>
+              Yep<input type="radio" name="recommended" id="rec" value="1" />
+              Nah<input type="radio" name="recommended" id="not_rec"value="0"/>
+              <br /><br />
+              <label for="role">Role of your Preference:</label><br />
+              <textarea id="synopsis" name="synopsis"></textarea>
+              <br>
+              <label for="image">What do they look like?</label><br />
+              <input id="img_up" type="file" name="img_path" />
+            </fieldset>
+          </form>
+          <!-- For Sorting ------------------------------->
+          <hr />
+          <h4>Sorting By:</h4>
+          <input id="sort_name_btn"type="button" value="Nickname" onclick="sort_champs(this.value)"/>
+          <input id="sort_index_btn" type="button" value="Index" onclick="sort_champs(this.value)"/>
+          <br />
+          <hr />
+          <!-- To display the page number ----------------->
+          <h4 id="page_num" name="index"></h4>
+          <br />
+          <input id="get" type="button" value="Get" onclick="get_item()" />
+          <input type="text" id="getItem" class="input_sm" value="" />
+          <br />
+          <input id="firstBtn" type="button" value="First"onclick="goFirst()"/>
+          <input id="prevBtn" type="button" value="Left" onclick="goPrev()" />
+          <input id="nextBtn" type="button" value="Right" onclick="goNext()" />
+          <input id="lastBtn" type="button" value="Last" onclick="goLast()" />
+        </td>
+        <!-- For image display -->
+        <td><img class="float-left" id="champ_img" src="" width="230px" /></td>
+      </tr>
+    </table>
+    <footer>Alexis Lara-Umana * CSCI 130 * Intro to Web Development * Database Project</footer>
+    <script src="DBFunctions.js"></script>
+  </body>
+</html>

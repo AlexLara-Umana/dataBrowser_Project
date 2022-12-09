@@ -1,0 +1,137 @@
+[
+  {
+    "title": "Yuumi",
+    "year": "2019",
+    "length": "Bandle City",
+    "rating": "The Magical Cat",
+    "synopsis": "Support",
+    "recommended": false,
+    "img_path": "Assets/Img1.jpg"
+  },
+  {
+    "title": "Ivern",
+    "year": 2016,
+    "length": "Ionia",
+    "rating": "The Green Father",
+    "synopsis": "Jungle",
+    "recommended": false,
+    "img_path": "Assets/Img2.jpg"
+  },
+  {
+    "title": "Vi",
+    "year": 2012,
+    "length": "Zaun",
+    "rating": "The Piltover Enforcer",
+    "synopsis": "Jungle",
+    "recommended": true,
+    "img_path": "Assets/Img3.jpg"
+  },
+  {
+    "title": "Jayce",
+    "year": "2012",
+    "length": "Piltover",
+    "rating": "The Defender of Tomorrow",
+    "synopsis": "Top",
+    "recommended": false,
+    "img_path": "Assets/Img4.jpg"
+  },
+  {
+    "title": "Lulu",
+    "year": "2012",
+    "length": "Bandle City",
+    "rating": "The Fae Sorceress",
+    "synopsis": "Support",
+    "recommended": true,
+    "img_path": "Assets/Img5.jpg"
+  },
+  {
+    "title": "Talon",
+    "year": "2011",
+    "length": "Noxus",
+    "rating": "The Blade's Shadow",
+    "synopsis": "Mid",
+    "recommended": false,
+    "img_path": "Assets/Img6.jpg"
+  },
+  {
+    "title": "Zac",
+    "year": "2012",
+    "length": "Zaun",
+    "rating": "The Secret Weapon",
+    "synopsis": "Jungle",
+    "recommended": true,
+    "img_path": "Assets/Img7.jpg"
+  },
+  {
+    "title": "Rumble",
+    "year": "2011",
+    "length": "Bandle City",
+    "rating": "The Mechanized Menace",
+    "synopsis": "Top",
+    "recommended": false,
+    "img_path": "Assets/Img8.jpg"
+  },
+  {
+    "title": "Kayn",
+    "year": "2017",
+    "length": "Ionia",
+    "rating": "The Shadow Reaper",
+    "synopsis": "Jungle",
+    "recommended": false,
+    "img_path": "Assets/Img9.jpg"
+  },
+  {
+    "title": "Jhin",
+    "year": "2016",
+    "length": "Ionia",
+    "rating": "The Virtuoso",
+    "synopsis": "Bot",
+    "recommended": true,
+    "img_path": "Assets/Img10.jpg"
+  },
+  {
+    "title": "Morgana",
+    "year": "2009",
+    "length": "Demacia",
+    "rating": "The Fallen",
+    "synopsis": "Support",
+    "recommended": true,
+    "img_path": "Assets/Img11.jpg"
+  },
+  {
+    "title": "Malzahar",
+    "year": "2010",
+    "length": "Void",
+    "rating": "The Prophet of the Void",
+    "synopsis": "Mid",
+    "recommended": true,
+    "img_path": "Assets/Img12.jpg"
+  },
+  {
+    "title": "Nunu & Willump",
+    "year": "2009",
+    "length": "Freljord",
+    "rating": "The Boy and His Yeti",
+    "synopsis": "Jungle",
+    "recommended": true,
+    "img_path": "Assets/Img13.jpg"
+  },
+  {
+    "title": "Nami",
+    "year": "2012",
+    "length": "Bilgewater",
+    "rating": "The Tidecaller",
+    "synopsis": "Support",
+    "recommended": true,
+    "img_path": "Assets/Img14.jpg"
+  },
+  {
+    "title": "Amumu",
+    "year": "2009",
+    "length": "Shurima",
+    "rating": "The Sad Mummy",
+    "synopsis": "Jungle",
+    "recommended": true,
+    "img_path": "Assets/Img15.jpg"
+  }
+]
